@@ -1,0 +1,39 @@
+name: Build
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        include:
+          - os: ubuntu-latest
+            ext: ""
+          - os: windows-latest
+            ext: ".exe"
+          - os: macos-latest
+            ext: ""
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.26"
+          cache-dependency-path: go/go.sum
+
+      - name: Build
+        working-directory: go
+        run: go build -trimpath -ldflags="-s -w" -o "repkg${{ matrix.ext }}" ./cmd/repkg/
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: repkg-${{ matrix.os }}
+          path: go/repkg${{ matrix.ext }}
