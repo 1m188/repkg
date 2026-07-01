@@ -54,3 +54,9 @@ Convert all TEX files to images from specific folder
 ```
 repkg extract -t -s E:\path\to\dir\with\tex\files
 ```
+
+## 其他
+
+- [go/](./go/) 为 golang 实现
+- [rs/](./rs/) 为 rust 实现
+- [.github/workflows/](./.github/workflows/) 为GitHub CI构建工作流，构建后自动上传产物供使用者下载
