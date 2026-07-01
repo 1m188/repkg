@@ -35,12 +35,13 @@ jobs:
         working-directory: rs
         run: cargo build --release --target ${{ matrix.target }}
 
-      - name: 打包产物
+      - name: 准备产物
         shell: bash
         run: |
-          cp "rs/target/${{ matrix.target }}/release/repkg${{ matrix.ext }}" .
+          mkdir -p artifacts
+          cp "rs/target/${{ matrix.target }}/release/repkg${{ matrix.ext }}" "artifacts/repkg${{ matrix.ext }}"
 
       - uses: actions/upload-artifact@v4
         with:
           name: repkg-${{ matrix.os }}-${{ matrix.target }}
-          path: repkg${{ matrix.ext }}
+          path: artifacts/
