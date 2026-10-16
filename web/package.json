@@ -1,0 +1,24 @@
+{
+  "name": "repkg-web",
+  "private": true,
+  "type": "module",
+  "description": "Wallpaper Engine PKG 解包 / TEX 转换 —— 纯静态 Web 版（RePKG 路线 A：TypeScript 重写）",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "e2e": "node tools/e2e-smoke.mjs",
+    "gen:baseline": "node tools/gen-baseline.mjs"
+  },
+  "dependencies": {
+    "gifenc": "^1.0.3"
+  },
+  "devDependencies": {
+    "playwright": "^1.64.1",
+    "pngjs": "^7.0.0",
+    "typescript": "^5.6.0",
+    "vite": "^7.0.0",
+    "vitest": "^3.0.0"
+  }
+}

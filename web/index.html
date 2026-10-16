@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="RePKG Web —— Wallpaper Engine PKG 解包 / TEX 转 PNG·GIF·MP4，纯浏览器本地处理"
+    />
+    <title>RePKG Web · Wallpaper Engine 壁纸解包</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%236d8ff7'/%3E%3Cpath d='M22 74V26h34a16 16 0 0 1 0 32H34l18 16' fill='none' stroke='%23fff' stroke-width='9' stroke-linecap='round'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div class="brand">
+          RePKG <span class="tag">web</span>
+          <span class="tagline">Wallpaper Engine PKG 解包 / TEX 转换 · 纯前端静态实现</span>
+        </div>
+        <a
+          class="gh"
+          href="https://github.com/1m188/repkg"
+          target="_blank"
+          rel="noreferrer noopener"
+          >GitHub</a
+        >
+      </header>
+
+      <main>
+        <!-- JS 未运行提示（模块脚本加载成功后由 main.ts 移除） -->
+        <div id="script-warning" class="script-warning">
+          ⚠️ 页面脚本未运行。如果通过 <code>file://</code> 双击打开 HTML，浏览器会拦截 ES 模块 ——
+          请使用 <code>npm run dev</code> / <code>npm run preview</code> 本地访问，或部署后的 HTTPS 地址。
+        </div>
+
+        <!-- 首屏：拖拽入口 -->
+        <section id="hero">
+          <div id="dropzone" tabindex="0">
+            <div class="dz-icon">📦</div>
+            <div class="dz-title">拖入 .pkg / .tex 文件</div>
+            <div class="dz-sub">或点击 / 按钮选择（可多选）· 所有解析与转换都在你的设备本地完成</div>
+            <button id="btn-pick" class="primary">选择文件…</button>
+            <div class="dz-hint">支持 Wallpaper Engine 场景包（PKG）与独立 TEX 纹理；无后端、无上传</div>
+          </div>
+        </section>
+
+        <!-- 工作区 -->
+        <section id="work" class="hidden">
+          <nav id="docbar"></nav>
+
+          <div id="columns">
+            <aside id="sidebar">
+              <div class="toolbar">
+                <input id="filter" type="text" placeholder="过滤（路径 / 扩展名，如 tex）" autocomplete="off" />
+                <select id="sort">
+                  <option value="path">路径排序</option>
+                  <option value="name">文件名排序</option>
+                  <option value="size">大小排序</option>
+                </select>
+              </div>
+              <div class="zipopts">
+                <button id="btn-zip" class="primary">⬇ 打包下载 ZIP</button>
+                <label><input type="checkbox" id="opt-convert" checked /> TEX 转换为图片</label>
+                <label><input type="checkbox" id="opt-raw" /> 同时保留原始 .tex</label>
+                <label><input type="checkbox" id="opt-json" checked /> 生成 .tex-json</label>
+              </div>
+              <ul id="tree" role="listbox" aria-label="PKG 条目"></ul>
+            </aside>
+
+            <article id="detail">
+              <div id="detail-empty" class="placeholder">
+                <div>选中左侧条目以预览</div>
+                <div class="hint">TEX 自动转换 PNG / GIF / MP4 · 其他格式直接下载</div>
+              </div>
+              <div id="detail-view" class="hidden"></div>
+            </article>
+          </div>
+        </section>
+
+        <div id="statusbar" class="hidden">
+          <span id="status-text">就绪</span>
+          <div id="status-prog" class="bar hidden"><i></i></div>
+        </div>
+      </main>
+
+      <footer class="foot">
+        RePKG · MIT License · 格式逆向原作 notscuffed · 本页为 TypeScript 移植版
+      </footer>
+    </div>
+
+    <span id="toast" class="hidden"></span>
+    <input
+      id="file-input"
+      type="file"
+      multiple
+      accept=".pkg,.tex,application/octet-stream"
+      class="visually-hidden"
+      tabindex="-1"
+      aria-hidden="true"
+    />
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

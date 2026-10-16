@@ -1,0 +1,217 @@
+{
+  "source": "go",
+  "pkgPath": "go/testdata/test.pkg",
+  "pkg": {
+    "magic": "PKGV0009",
+    "entryCount": 10,
+    "size": 6034452,
+    "shaHex": "406de4cc83657406e435657ea87153ead9b06b3ac61252dbca6f1cbb02b9434e"
+  },
+  "entries": [
+    {
+      "path": "effects/waterripple/effect.json",
+      "length": 559,
+      "crcHex": "6478f1c2"
+    },
+    {
+      "path": "materials/116.json",
+      "length": 263,
+      "crcHex": "b9d5f709"
+    },
+    {
+      "path": "materials/116.tex",
+      "length": 5712936,
+      "crcHex": "5789d4e0"
+    },
+    {
+      "path": "materials/effects/waterripple.json",
+      "length": 226,
+      "crcHex": "1800292b"
+    },
+    {
+      "path": "materials/effects/waterripplenormal.tex",
+      "length": 261595,
+      "crcHex": "51f32b1a"
+    },
+    {
+      "path": "materials/masks/waterripple_mask_ee0d9bbc6d0516b8583c8fb3e841485c0b7ec4e8.tex",
+      "length": 52579,
+      "crcHex": "1eab52f6"
+    },
+    {
+      "path": "models/116.json",
+      "length": 61,
+      "crcHex": "4bee124d"
+    },
+    {
+      "path": "scene.json",
+      "length": 1921,
+      "crcHex": "b1a7523f"
+    },
+    {
+      "path": "shaders/effects/waterripple.frag",
+      "length": 1977,
+      "crcHex": "58f369fe"
+    },
+    {
+      "path": "shaders/effects/waterripple.vert",
+      "length": 1894,
+      "crcHex": "9b89d13d"
+    }
+  ],
+  "texOutputs": [
+    {
+      "base": "materials/116",
+      "tex": {
+        "format": 0,
+        "flags": 2,
+        "textureWidth": 4096,
+        "textureHeight": 4096,
+        "imageWidth": 3840,
+        "imageHeight": 2400,
+        "containerMagic": "TEXB0003",
+        "version": 3,
+        "imageFormat": 2,
+        "images": [
+          [
+            {
+              "width": 3840,
+              "height": 2400
+            },
+            {
+              "width": 1920,
+              "height": 1200
+            },
+            {
+              "width": 960,
+              "height": 600
+            },
+            {
+              "width": 480,
+              "height": 300
+            },
+            {
+              "width": 240,
+              "height": 150
+            },
+            {
+              "width": 120,
+              "height": 75
+            },
+            {
+              "width": 60,
+              "height": 37
+            },
+            {
+              "width": 30,
+              "height": 18
+            },
+            {
+              "width": 15,
+              "height": 9
+            }
+          ]
+        ]
+      },
+      "output": {
+        "kind": "passthrough",
+        "ext": "jpg"
+      },
+      "rawCrcHex": "5789d4e0",
+      "mip0CrcHex": "6331b95f"
+    },
+    {
+      "base": "materials/116",
+      "json": {
+        "bleedtransparentcolors": true,
+        "clampuvs": true,
+        "format": "rgba8888",
+        "nomip": "false",
+        "nointerpolation": "false",
+        "nonpoweroftwo": "true"
+      },
+      "rawCrcHex": "5789d4e0"
+    },
+    {
+      "base": "materials/effects/waterripplenormal",
+      "tex": {
+        "format": 0,
+        "flags": 0,
+        "textureWidth": 256,
+        "textureHeight": 256,
+        "imageWidth": 256,
+        "imageHeight": 256,
+        "containerMagic": "TEXB0003",
+        "version": 3,
+        "imageFormat": -1,
+        "images": [
+          [
+            {
+              "width": 256,
+              "height": 256
+            }
+          ]
+        ]
+      },
+      "output": {
+        "kind": "png",
+        "width": 256,
+        "height": 256
+      },
+      "pixelShaHex": "83d1ccbcda02481ff58e0580f3dbab78e83c5ce0c10ba96a7dfed584a23e090a",
+      "rawCrcHex": "51f32b1a"
+    },
+    {
+      "base": "materials/effects/waterripplenormal",
+      "json": {
+        "bleedtransparentcolors": true,
+        "clampuvs": false,
+        "format": "rgba8888",
+        "nomip": "true",
+        "nointerpolation": "false",
+        "nonpoweroftwo": "false"
+      },
+      "rawCrcHex": "51f32b1a"
+    },
+    {
+      "base": "materials/masks/waterripple_mask_ee0d9bbc6d0516b8583c8fb3e841485c0b7ec4e8",
+      "tex": {
+        "format": 0,
+        "flags": 2,
+        "textureWidth": 2048,
+        "textureHeight": 2048,
+        "imageWidth": 1920,
+        "imageHeight": 1200,
+        "containerMagic": "TEXB0003",
+        "version": 3,
+        "imageFormat": 13,
+        "images": [
+          [
+            {
+              "width": 1920,
+              "height": 1200
+            }
+          ]
+        ]
+      },
+      "output": {
+        "kind": "passthrough",
+        "ext": "png"
+      },
+      "rawCrcHex": "1eab52f6",
+      "mip0CrcHex": "2355ae2c"
+    },
+    {
+      "base": "materials/masks/waterripple_mask_ee0d9bbc6d0516b8583c8fb3e841485c0b7ec4e8",
+      "json": {
+        "bleedtransparentcolors": true,
+        "clampuvs": true,
+        "format": "rgba8888",
+        "nomip": "true",
+        "nointerpolation": "false",
+        "nonpoweroftwo": "true"
+      },
+      "rawCrcHex": "1eab52f6"
+    }
+  ]
+}
